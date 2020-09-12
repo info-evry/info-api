@@ -93,7 +93,7 @@ function getWeekNumber( date = new Date() ) {
 }
 
 
-// API Request -- Edt by Level / Sublevel / Week / Year
+// API Request -- Edt by Level / Sublevel / Day / Month / Year
 app.get( `${versionApi}/edt/:level/:sublevel/:day/:month/:year`, ( req, res ) => {
 
 	const { params } = req;
@@ -131,6 +131,12 @@ app.get( `${versionApi}/edt/:level/:sublevel/:day/:month/:year`, ( req, res ) =>
 // Docs
 app.get( `${versionApi}/docs`, function ( req, res ) {
 	res.sendFile( path.join( __dirname + '/docs.html' ) );
+} );
+
+// Error page not found
+app.use( ( req, res, next ) => {
+	res.status( 404 );
+	res.json( { error: '404' } );
 } );
 
 app.listen( port, () => {
