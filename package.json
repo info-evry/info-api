@@ -1,0 +1,22 @@
+{
+  "name": "info-api",
+  "version": "1.0.0",
+  "description": "Private HTTP API for Info Evry Student Group at University of Evry",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/info-evry/info-api.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/info-evry/info-api/issues"
+  },
+  "homepage": "https://github.com/info-evry/info-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API v1</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"
+        integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg=="
+        crossorigin="anonymous" />
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article class="markdown-body">
+        <h1>API v1</h1>
+        <ul>
+            <li>
+                <h3>EDT (GET Method)</h3>
+                <p>Get EDT.</p>
+                <pre>/api/v1/edt/{level}/{sublevel}/{week}/{year}</pre>
+                <ul>
+                    <li>level: Level (str) <br> ex. M1</li>
+                    <li>sublevel: Group (str) <br> ex. SR</li>
+                    <li>week: Week (int) <br> ex. 37</li>
+                    <li>year: Year (int) <br> ex. 2020</li>
+                </ul>
+                <p>Example</p>
+                <pre>/api/v1/edt/L1/G6/37/2020</pre>
+                <p>Return</p>
+                <pre>{
+"level":"L1",
+"sublevel":"Groupe 6",
+"week":"37",
+"year":"2020",
+"url":"https://edt.univ-evry.fr/vue_etudiant_horizontale.php?current_year=2020&current_student=68426749&current_week=37&lar=1920&hau=1080"
+}</pre>
+            </li>
+        </ul>
+    </article>
+</body>
+
+</html>
