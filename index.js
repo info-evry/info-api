@@ -104,7 +104,7 @@ app.get( `${versionApi}/edt/:level/:sublevel/:day/:month/:year`, ( req, res ) =>
 	level = level.toUpperCase();
 	sublevel = sublevel.toUpperCase();
 
-	const week = getWeekNumber( new Date( year, month, day ) );
+	const week = getWeekNumber( new Date( year, month - 1, day ) );
 
 	const { code: student, name } = levels[level][sublevel];
 
