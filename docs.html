@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API v1</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"
+        integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg=="
+        crossorigin="anonymous" />
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article class="markdown-body">
+        <h1>API v1</h1>
+        <h2>EDT (GET)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>type</th>
+                    <th>description</th>
+                    <th>example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>level</td>
+                    <td>string</td>
+                    <td>the desired level</td>
+                    <td>M1, L1</td>
+                </tr>
+                <tr>
+                    <td>sublevel</td>
+                    <td>string</td>
+                    <td>the desired group</td>
+                    <td>SR, G5</td>
+                </tr>
+                <tr>
+                    <td>week</td>
+                    <td>integer</td>
+                    <td>the number of the week</td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td>month</td>
+                    <td>integer</td>
+                    <td>the desired month</td>
+                    <td>05</td>
+                </tr>
+                <tr>
+                    <td>year</td>
+                    <td>integer</td>
+                    <td>the desired year</td>
+                    <td>2020</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <dl>
+            <dt>Levels</dt>
+            <dd>Get all level data.</dd>
+        </dl>
+        <pre>/api/v1/edt/</pre>
+
+        <dl>
+            <dt>Sublevels by Level</dt>
+            <dd>Get all sublevels data of a level.</dd>
+        </dl>
+        <pre>/api/v1/edt/{level}</pre>
+
+        <dl>
+            <dt>Details from Sublevel by Level / Sublevel</dt>
+            <dd>Get sublevel data of a level.</dd>
+        </dl>
+        <pre>/api/v1/edt/{level}/{sublevel}</pre>
+
+        <dl>
+            <dt>Edt by Level / Sublevel / Week / Year</dt>
+            <dd>Get edt form sublevel of a level with week and year.</dd>
+        </dl>
+        <pre>/api/v1/edt/{level}/{sublevel}/{week}/{year}</pre>
+
+        <dl>
+            <dt>Edt by Level / Sublevel / Day / Month / Year</dt>
+            <dd>Get edt form sublevel of a level with day, month and year.</dd>
+        </dl>
+        <pre>/api/v1/edt/{level}/{sublevel}/{day}/{month]/{year}</pre>
+    </article>
+</body>
+
+</html>
