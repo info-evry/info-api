@@ -29,29 +29,79 @@
 <body>
     <article class="markdown-body">
         <h1>API v1</h1>
-        <ul>
-            <li>
-                <h3>EDT (GET Method)</h3>
-                <p>Get EDT.</p>
-                <pre>/api/v1/edt/{level}/{sublevel}/{week}/{year}</pre>
-                <ul>
-                    <li>level: Level (str) <br> ex. M1</li>
-                    <li>sublevel: Group (str) <br> ex. SR</li>
-                    <li>week: Week (int) <br> ex. 37</li>
-                    <li>year: Year (int) <br> ex. 2020</li>
-                </ul>
-                <p>Example</p>
-                <pre>/api/v1/edt/L1/G6/37/2020</pre>
-                <p>Return</p>
-                <pre>{
-"level":"L1",
-"sublevel":"Groupe 6",
-"week":"37",
-"year":"2020",
-"url":"https://edt.univ-evry.fr/vue_etudiant_horizontale.php?current_year=2020&current_student=68426749&current_week=37&lar=1920&hau=1080"
-}</pre>
-            </li>
-        </ul>
+        <h2>EDT (GET)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>type</th>
+                    <th>description</th>
+                    <th>example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>level</td>
+                    <td>string</td>
+                    <td>the desired level</td>
+                    <td>M1, L1</td>
+                </tr>
+                <tr>
+                    <td>sublevel</td>
+                    <td>string</td>
+                    <td>the desired group</td>
+                    <td>SR, G5</td>
+                </tr>
+                <tr>
+                    <td>week</td>
+                    <td>integer</td>
+                    <td>the number of the week</td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td>month</td>
+                    <td>integer</td>
+                    <td>the desired month</td>
+                    <td>05</td>
+                </tr>
+                <tr>
+                    <td>year</td>
+                    <td>integer</td>
+                    <td>the desired year</td>
+                    <td>2020</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <dl>
+            <dt>Levels</dt>
+            <dd>Get all level data.</dd>
+        </dl>
+        <pre>/api/v1/edt/</pre>
+
+        <dl>
+            <dt>Sublevels by Level</dt>
+            <dd>Get all sublevels data of a level.</dd>
+        </dl>
+        <pre>/api/v1/edt/{level}</pre>
+
+        <dl>
+            <dt>Details from Sublevel by Level / Sublevel</dt>
+            <dd>Get sublevel data of a level.</dd>
+        </dl>
+        <pre>/api/v1/edt/{level}/{sublevel}</pre>
+
+        <dl>
+            <dt>Edt by Level / Sublevel / Week / Year</dt>
+            <dd>Get edt form sublevel of a level with week and year.</dd>
+        </dl>
+        <pre>/api/v1/edt/{level}/{sublevel}/{week}/{year}</pre>
+
+        <dl>
+            <dt>Edt by Level / Sublevel / Day / Month / Year</dt>
+            <dd>Get edt form sublevel of a level with day, month and year.</dd>
+        </dl>
+        <pre>/api/v1/edt/{level}/{sublevel}/{day}/{month]/{year}</pre>
     </article>
 </body>
 
