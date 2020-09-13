@@ -9,7 +9,7 @@ Install Deno (https://deno.land/manual/getting_started/installation)
 ## Run
 
 ```bash
-deno run --allow-net --allow-read=./data app.ts
+deno run --allow-net --allow-read=./ app.ts
 ```
 
-Server run at http://localhost:1447
+Server run at http://localhost:1667
