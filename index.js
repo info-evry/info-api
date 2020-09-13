@@ -1,19 +1,23 @@
-const compression = require( 'compression' );
 const express = require( 'express' );
-const app = express();
+const compression = require( 'compression' );
+const helmet = require( 'helmet' );
 const path = require( 'path' );
 const fetch = require( 'node-fetch' );
-const port = 3000;
 
+// Config
 const versionApi = '/api/v1';
 
-// Data
-const levels = require( './data/levels.json' );
+// Instanciate
+const app = express();
 
-app.use( compression( { level: 1 } ) );
+app.use( helmet() );
+app.use( compression( { level: 9 } ) );
 
 // API Request -- Levels
 app.get( `${versionApi}/edt`, ( req, res ) => {
+
+	const levels = require( './data/levels.json' );
+
 	res.json( {
 		levels: levels
 	} );
@@ -21,6 +25,9 @@ app.get( `${versionApi}/edt`, ( req, res ) => {
 
 // API Request -- Sublevels by Level
 app.get( `${versionApi}/edt/:level`, ( req, res ) => {
+
+	const levels = require( './data/levels.json' );
+
 	let { params: { level } } = req;
 
 	level = level.toUpperCase();
@@ -33,6 +40,9 @@ app.get( `${versionApi}/edt/:level`, ( req, res ) => {
 
 // API Request -- Details from Sublevel by Level / Sublevel
 app.get( `${versionApi}/edt/:level/:sublevel`, ( req, res ) => {
+
+	const levels = require( './data/levels.json' );
+
 	let { params: { level, sublevel } } = req;
 
 	level = level.toUpperCase();
@@ -48,6 +58,8 @@ app.get( `${versionApi}/edt/:level/:sublevel`, ( req, res ) => {
 
 // API Request -- Edt by Level / Sublevel / Week / Year
 app.get( `${versionApi}/edt/:level/:sublevel/:week/:year`, ( req, res ) => {
+
+	const levels = require( './data/levels.json' );
 
 	const { params } = req;
 
@@ -96,6 +108,8 @@ function getWeekNumber( date = new Date() ) {
 // API Request -- Edt by Level / Sublevel / Week / Year
 app.get( `${versionApi}/edt/:level/:sublevel/:day/:month/:year`, ( req, res ) => {
 
+	const levels = require( './data/levels.json' );
+
 	const { params } = req;
 
 	let { level, sublevel } = params;
@@ -133,6 +147,4 @@ app.get( `${versionApi}/docs`, function ( req, res ) {
 	res.sendFile( path.join( __dirname + '/docs.html' ) );
 } );
 
-app.listen( port, () => {
-	console.log( `Server listening at http://localhost:${port}` );
-} );
+app.listen( 80 );
