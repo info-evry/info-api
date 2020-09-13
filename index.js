@@ -5,7 +5,7 @@ const path = require( 'path' );
 const fetch = require( 'node-fetch' );
 
 // Config
-const port = 80;
+const port = 3000;
 const versionApi = '/api/v1';
 
 // Instanciate
