@@ -905,5 +905,69 @@
             "number": 218,
             "phone": "0164853464"
         }
+    },
+    {
+        "fullName": "Jérome MATHE",
+        "firstName": "Jérome",
+        "lastName": "MATHE",
+        "emails": [
+            {
+                "fullEmail": "jerome.mathe@univ-evry.fr",
+                "emailUser": "jerome.mathe",
+                "emailDomain": "univ-evry.fr"
+            }
+        ],
+        "courses": [],
+        "responsibilities": [],
+        "urls": []
+    },
+    {
+        "fullName": "Eric LAHARGOUE",
+        "firstName": "Eric",
+        "lastName": "LAHARGOUE",
+        "emails": [
+            {
+                "fullEmail": "eric.lahargoue@univ-evry.fr",
+                "emailUser": "eric.lahargoue",
+                "emailDomain": "univ-evry.fr"
+            }
+        ],
+        "courses": [],
+        "responsibilities": [],
+        "urls": []
+    },
+    {
+        "fullName": "Edward NTONDA",
+        "firstName": "Edward",
+        "lastName": "NTONDA",
+        "emails": [
+            {
+                "fullEmail": "edntonda@yahoo.fr",
+                "emailUser": "edntonda",
+                "emailDomain": "yahoo.fr"
+            }
+        ],
+        "courses": [
+            ["anglais","english"]
+        ],
+        "responsibilities": [],
+        "urls": []
+    },
+    {
+        "fullName": "Alain VEERAVALLI",
+        "firstName": "Alain",
+        "lastName": "VEERAVALLI",
+        "emails": [
+            {
+                "fullEmail": "alain.veeravalli@univ-evry.fr",
+                "emailUser": "alain.veeravalli",
+                "emailDomain": "univ-evry.fr"
+            }
+        ],
+        "courses": [
+            ["mathématiques","maths"]
+        ],
+        "responsibilities": [],
+        "urls": []
     }
 ]

@@ -21,11 +21,12 @@ app.use(`${versionApi}/edt`, edtRouter);
 app.use(`${versionApi}/contacts`, contactsRouter);
 
 // Docs
-app.get( `/docs`, function ( req, res ) {
+app.get( '/docs', ( req, res ) => {
 	res.sendFile( path.join( __dirname + '/docs.html' ) );
 } );
 
 // Error page not found
+// eslint-disable-next-line no-unused-vars
 app.use( ( req, res, next ) => {
 	res.status( 404 );
 	res.json( { error: '404' } );

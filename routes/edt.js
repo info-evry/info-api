@@ -3,7 +3,7 @@ const router = express.Router();
 const fetch = require( 'node-fetch' );
 
 // API Request -- Levels
-router.get( `/`, ( req, res ) => {
+router.get( '/', ( req, res ) => {
 
 	const levels = require( '../data/levels.json' );
 
@@ -13,7 +13,7 @@ router.get( `/`, ( req, res ) => {
 } );
 
 // API Request -- Sublevels by Level
-router.get( `/:level`, ( req, res ) => {
+router.get( '/:level', ( req, res ) => {
 
 	const levels = require( '../data/levels.json' );
 
@@ -28,7 +28,7 @@ router.get( `/:level`, ( req, res ) => {
 } );
 
 // API Request -- Details from Sublevel by Level / Sublevel
-router.get( `/:level/:sublevel`, ( req, res ) => {
+router.get( '/:level/:sublevel', ( req, res ) => {
 
 	const levels = require( '../data/levels.json' );
 
@@ -46,7 +46,7 @@ router.get( `/:level/:sublevel`, ( req, res ) => {
 } );
 
 // API Request -- Edt by Level / Sublevel / Week / Year
-router.get( `/:level/:sublevel/:week/:year`, ( req, res ) => {
+router.get( '/:level/:sublevel/:week/:year', ( req, res ) => {
 
 	const levels = require( '../data/levels.json' );
 
@@ -93,7 +93,7 @@ function getWeekNumber( date = new Date() ) {
 }
 
 // API Request -- Edt by Level / Sublevel / Day / Month / Year
-router.get( `/:level/:sublevel/:day/:month/:year`, ( req, res ) => {
+router.get( '/:level/:sublevel/:day/:month/:year', ( req, res ) => {
 
 	const levels = require( '../data/levels.json' );
 
