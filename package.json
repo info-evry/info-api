@@ -4,8 +4,8 @@
   "description": "Private HTTP API for Info Evry Student Group at University of Evry",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
-    "test": "nodemon .",
+    "start": "node --experimental-worker .",
+    "test": "nodemon --trace-warnings --experimental-worker .",
     "lint": "eslint .",
     "lint-fix": "eslint --fix"
   },
