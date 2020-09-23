@@ -5,7 +5,7 @@ const path = require( 'path' );
 
 // Config
 const port = 3000;
-const versionApi = '/api/v1';
+const versionApi = 1;
 
 // Instanciate
 const app = express();
@@ -17,8 +17,8 @@ app.use( compression( { level: 9 } ) );
 const edtRouter = require('./routes/edt');
 const contactsRouter = require('./routes/contacts');
 
-app.use(`${versionApi}/edt`, edtRouter);
-app.use(`${versionApi}/contacts`, contactsRouter);
+app.use(`/v${versionApi}/edt`, edtRouter);
+app.use(`/v${versionApi}/contacts`, contactsRouter);
 
 // Docs
 app.get( '/docs', ( req, res ) => {
