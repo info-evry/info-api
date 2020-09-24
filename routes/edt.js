@@ -7,9 +7,7 @@ router.get( '/', ( req, res ) => {
 
 	const levels = require( '../data/levels.json' );
 
-	res.json( {
-		levels: levels
-	} );
+	res.json( levels );
 } );
 
 // API Request -- Sublevels by Level
@@ -21,9 +19,7 @@ router.get( '/:level', ( req, res ) => {
 
 	level = level.toUpperCase();
 
-	res.json( {
-		[level]: levels[level]
-	} );
+	res.json( levels[level] );
 
 } );
 
@@ -37,11 +33,7 @@ router.get( '/:level/:sublevel', ( req, res ) => {
 	level = level.toUpperCase();
 	sublevel = sublevel.toUpperCase();
 
-	res.json( {
-		[level]: {
-			[sublevel]: levels[level][sublevel]
-		}
-	} );
+	res.json( levels[level][sublevel] );
 
 } );
 
