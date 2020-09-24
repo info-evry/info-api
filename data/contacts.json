@@ -969,5 +969,22 @@
         ],
         "responsibilities": [],
         "urls": []
+    },
+    {
+        "fullName": "Sylvain FISSON",
+        "firstName": "Sylvain",
+        "lastName": "FISSON",
+        "emails": [
+            {
+                "fullEmail": "sylvain.fisson@univ-evry.fr",
+                "emailUser": "sylvain.fisson",
+                "emailDomain": "univ-evry.fr"
+            }
+        ],
+        "courses": [
+            ["PPEI"]
+        ],
+        "responsibilities": [],
+        "urls": []
     }
 ]
