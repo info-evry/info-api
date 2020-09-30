@@ -29,9 +29,9 @@ router.get( '/:data', async ( req, res ) => {
 
 	const { data } = params;
 
-	const parsedData = (decodeURIComponent( data )).split( /,/gu ).filter( e => e.length > 0);
+	const parsedData = decodeURIComponent( data ).split( /,/gu ).filter( e => e.length > 0 );
 
-	res.json( ( await getContact( ...parsedData ) ) );
+	res.json( await getContact( ...parsedData ) );
 } );
 
 module.exports = router;
