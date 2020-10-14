@@ -29,7 +29,10 @@ app.get( '/docs', ( req, res ) => {
 // eslint-disable-next-line no-unused-vars
 app.use( ( req, res, next ) => {
 	res.status( 404 );
-	res.json( { error: 'not_found' } );
+	res.json( {
+		code: 404,
+		error: 'not_found' 
+	} );
 } );
 
 app.listen( port, () => {

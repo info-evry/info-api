@@ -1,6 +1,6 @@
 const express = require( 'express' );
 const router = express.Router();
-const fetch = require( 'node-fetch' );
+// const fetch = require( 'node-fetch' );
 
 // API Request -- Levels
 router.get( '/', ( req, res ) => {
@@ -55,21 +55,29 @@ router.get( '/:level/:sublevel/:week/:year', ( req, res ) => {
 	const url = 'https://edt.univ-evry.fr/vue_etudiant_horizontale.php';
 	const query = `current_year=${year}&current_student=${student}&current_week=${week}&lar=1920&hau=1080`;
 
-	fetch( `${url}?${query}`, {
-		compress: true,
-		keepalive: true,
-		method: 'GET'
-	} )
-		.then( response => response.buffer() )
-		.then( buffer => {
-			res.json( {
-				level: level,
-				sublevel: name,
-				week: week,
-				year: year,
-				data: `data:image/png;base64,${buffer.toString( 'base64' )}`
-			} );
-		} );
+	res.json( {
+		level: level,
+		sublevel: name,
+		week: week,
+		year: year,
+		url: `${url}?${query}`
+	} );
+
+	// fetch( `${url}?${query}`, {
+	// 	compress: true,
+	// 	keepalive: true,
+	// 	method: 'GET'
+	// } )
+	// 	.then( response => response.buffer() )
+	// 	.then( buffer => {
+	// 		res.json( {
+	// 			level: level,
+	// 			sublevel: name,
+	// 			week: week,
+	// 			year: year,
+	// 			data: `data:image/png;base64,${buffer.toString( 'base64' )}`
+	// 		} );
+	// 	} );
 } );
 
 function getWeekNumber( date = new Date() ) {
@@ -104,21 +112,29 @@ router.get( '/:level/:sublevel/:day/:month/:year', ( req, res ) => {
 	const url = 'https://edt.univ-evry.fr/vue_etudiant_horizontale.php';
 	const query = `current_year=${year}&current_student=${student}&current_week=${week}&lar=1920&hau=1080`;
 
-	fetch( `${url}?${query}`, {
-		compress: true,
-		keepalive: true,
-		method: 'GET'
-	} )
-		.then( response => response.buffer() )
-		.then( buffer => {
-			res.json( {
-				level: level,
-				sublevel: name,
-				week: week,
-				year: year,
-				data: `data:image/png;base64,${buffer.toString( 'base64' )}`
-			} );
-		} );
+	res.json( {
+		level: level,
+		sublevel: name,
+		week: week,
+		year: year,
+		url: `${url}?${query}`
+	} );
+
+	// fetch( `${url}?${query}`, {
+	// 	compress: true,
+	// 	keepalive: true,
+	// 	method: 'GET'
+	// } )
+	// 	.then( response => response.buffer() )
+	// 	.then( buffer => {
+	// 		res.json( {
+	// 			level: level,
+	// 			sublevel: name,
+	// 			week: week,
+	// 			year: year,
+	// 			data: `data:image/png;base64,${buffer.toString( 'base64' )}`
+	// 		} );
+	// 	} );
 } );
 
 module.exports = router;

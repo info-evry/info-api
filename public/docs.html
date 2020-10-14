@@ -2,216 +2,261 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info Evry API - Docs</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Info Evry API - Docs</title>
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
 
-        body {
-            margin: 0;
-            display: grid;
-            height: 100vh;
-            grid-template: auto 1fr auto / auto 1fr auto;
-            font-family: system-ui, sans-serif;
-        }
+		body {
+			background-color: #2f2f2f;
+			color: white;
+			margin: 0;
+			display: grid;
+			height: 100vh;
+			grid-template: auto 1fr auto / auto 1fr auto;
+			font-family: system-ui, sans-serif;
+		}
 
-        header {
-            background: #007deb;
-            color: white;
-            padding: 2rem;
-            grid-column: 1 / 4;
-        }
+		header {
+			background: #007deb;
+			color: white;
+			padding: 2rem;
+			grid-column: 1 / 4;
+		}
 
-        .sidebar {
-            border-right: 1px solid #cacaca;
-            grid-column: 1 / 2;
-            padding: 1rem;
-        }
+		.sidebar {
+			border-right: 1px solid #cacaca;
+			grid-column: 1 / 2;
+			padding: 1rem;
+		}
 
-        main {
-            grid-column: 2 / 3;
-            padding: 1em;
-        }
+		main {
+			grid-column: 2 / 3;
+			padding: 1em;
+		}
 
-        footer {
-            background: #007deb;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            grid-column: 1 / 4;
-        }
+		footer {
+			background: #007deb;
+			color: white;
+			padding: 2rem;
+			text-align: center;
+			grid-column: 1 / 4;
+		}
 
-        pre {
-            border: 1px solid #cacaca;
-            border-radius: 3px;
-            padding: 10px;
-        }
+		pre {
+			border: 1px solid #cacaca;
+			border-radius: 3px;
+			padding: 10px;
+		}
 
-        ul {
-            padding: 1em;
-        }
+		ul {
+			padding: 1em;
+		}
 
-        table th {
-            border: 1px solid #ddd;
-            text-align: center;
-            padding: 1em;
-        }
+		table th {
+			border: 1px solid #ddd;
+			text-align: center;
+			padding: 1em;
+		}
 
-        table td {
-            border: 1px solid #ddd;
-            padding: 1em;
-        }
-    </style>
+		table td {
+			border: 1px solid #ddd;
+			padding: 1em;
+		}
+
+		hr {
+			margin: 3em;
+		}
+
+		a {
+			color: white;
+		}
+	</style>
 </head>
 
 <body>
-    <header id="top">
-        <h1>Info Evry API - Docs</h1>
-    </header>
-    <div class="sidebar">
-        Requests:
-        <ul>
-            <li><a href="#edt">EDT</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-        </ul>
-    </div>
-    <main>
-        <div id="edt">
-            <h1>EDT</h1>
-            <h3>Parameters</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Description</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>level</code></td>
-                        <td><code>string</code></td>
-                        <td>The desired level.</td>
-                        <td>M1, L1</td>
-                    </tr>
-                    <tr>
-                        <td><code>sublevel</code></td>
-                        <td><code>string</code></td>
-                        <td>The desired group.</td>
-                        <td>SR, G5</td>
-                    </tr>
-                    <tr>
-                        <td><code>week</code></td>
-                        <td><code>integer</code></td>
-                        <td>The number of the week.</td>
-                        <td>37</td>
-                    </tr>
-                    <tr>
-                        <td><code>month</code></td>
-                        <td><code>integer</code></td>
-                        <td>The desired month.</td>
-                        <td>05</td>
-                    </tr>
-                    <tr>
-                        <td><code>year</code></td>
-                        <td><code>integer</code></td>
-                        <td>The desired year.</td>
-                        <td>2020</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>List levels and groups</h2>
-            <p>Get all levels and groups.</p>
-            <pre>GET /v1/edt</pre>
-
-            <h2>List groups</h2>
-            <p>List groups for the specified level:</p>
-            <pre>GET /v1/edt/:level</pre>
-
-            <h2>Code group</h2>
-            <p>Get EDT code and name for the specified group:</p>
-            <pre>GET /v1/edt/:level/:sublevel</pre>
-            <h3>Response</h3>
-            <pre>Status: 200 OK: http://localhost:3000/v1/edt/l1/g6
-
-{"code":68426749,"name":"Groupe 6"}</pre>
-
-            <h2>EDT Image</h2>
-            <p>Get EDT data image for the specified group with week and year:</p>
-            <pre>GET /v1/edt/:level/:sublevel/:week/:year</pre>
-            <h3>Response</h3>
-            <pre>Status: 200 OK: http://localhost:3000/v1/edt/l1/g6/50/2020
+	<header id="top">
+		<h1>Info Evry API - Docs</h1>
+	</header>
+	<div class="sidebar">
+		<ul>
+			<li><a href="#general">General</a></li>
+		</ul>
+		Requests:
+		<ul>
+			<li><a href="#edt">EDT</a></li>
+			<li><a href="#contacts">Contacts</a></li>
+		</ul>
+	</div>
+	<main>
+		<div id="general">
+			<h1>General</h1>
+			<h3>Versions</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Version</th>
+						<th>Status</th>
+						<th>Default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>1</code></td>
+						<td><code>Available</code></td>
+						<td>Yes</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3>Errors</h3>
+			<p>404:</p>
+			<pre>Status: 404: https://api.info-evry.fr/hello
 
 {
-    "level": "L1",
-    "sublevel": "Groupe 6",
-    "week": "50",
-    "year": "2020",
-    "data": "data:image/png;base64,...
+	"code":404,
+	"error":"not_found"
+}</pre>
+		</div>
+		<hr>
+		<div id="edt">
+			<h1>EDT</h1>
+			<h3>Parameters</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+						<th>Example</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>level</code></td>
+						<td><code>string</code></td>
+						<td>The desired level.</td>
+						<td>M1, L1</td>
+					</tr>
+					<tr>
+						<td><code>sublevel</code></td>
+						<td><code>string</code></td>
+						<td>The desired group.</td>
+						<td>SR, G5</td>
+					</tr>
+					<tr>
+						<td><code>week</code></td>
+						<td><code>integer</code></td>
+						<td>The number of the week.</td>
+						<td>37</td>
+					</tr>
+					<tr>
+						<td><code>month</code></td>
+						<td><code>integer</code></td>
+						<td>The desired month.</td>
+						<td>05</td>
+					</tr>
+					<tr>
+						<td><code>year</code></td>
+						<td><code>integer</code></td>
+						<td>The desired year.</td>
+						<td>2020</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>List levels and groups</h2>
+			<p>Get all levels and groups.</p>
+			<pre>GET /v1/edt</pre>
+
+			<h2>List groups</h2>
+			<p>List groups for the specified level:</p>
+			<pre>GET /v1/edt/:level</pre>
+
+			<h2>Code group</h2>
+			<p>Get EDT code and name for the specified group:</p>
+			<pre>GET /v1/edt/:level/:sublevel</pre>
+			<h3>Response</h3>
+			<pre>Status: 200 OK: https://api.info-evry.fr/v1/edt/l1/g6
+
+{
+	"code":68426749,
+	"name":"Groupe 6"
 }</pre>
 
-            <h2>EDT Image</h2>
-            <p>Get EDT data image for the specified group with day, month and year:</p>
-            <pre>GET /v1/edt/:level/:sublevel/:day/:month/:year</pre>
-        </div>
+			<h2>EDT Image</h2>
+			<p>Get EDT data image for the specified group with week and year:</p>
+			<pre>GET /v1/edt/:level/:sublevel/:week/:year</pre>
+			<h3>Response</h3>
+			<pre>Status: 200 OK: https://api.info-evry.fr/v1/edt/l1/g6/50/2020
 
-        <div id="contacts">
-            <h1>Contacts</h1>
-            <h3>Parameters</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Description</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>data</code></td>
-                        <td><code>string</code></td>
-                        <td>The first name or last name.</td>
-                        <td>Michel, MARTIN</td>
-                    </tr>
-                </tbody>
-            </table>
+{
+	"level": "L1",
+	"sublevel": "Groupe 6",
+	"week": "50",
+	"year": "2020",
+	"url": "https://edt.univ-evry.fr/vue_etudiant_horizontale.php?current_year=2020&current_student=68426749&current_week=50&lar=1920&hau=1080"
+}</pre>
 
-            <h2>List contacts</h2>
-            <p>Get all contacts.</p>
-            <pre>GET /v1/contacts</pre>
+			<h2>EDT Image</h2>
+			<p>Get EDT data image for the specified group with day, month and year:</p>
+			<pre>GET /v1/edt/:level/:sublevel/:day/:month/:year</pre>
+		</div>
+		<hr>
+		<div id="contacts">
+			<h1>Contacts</h1>
+			<h3>Parameters</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+						<th>Example</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>data</code></td>
+						<td><code>string</code></td>
+						<td>The first name or last name.</td>
+						<td>Michel, MARTIN</td>
+					</tr>
+				</tbody>
+			</table>
 
-            <h2>List contacts</h2>
-            <p>List all contacts with specified data:</p>
-            <pre>GET /v1/contacts/:data</pre>
-            <h3>Response</h3>
-            <pre>Status: 200 OK: http://localhost:3000/v1/contacts/martin
+			<h2>List contacts</h2>
+			<p>Get all contacts.</p>
+			<pre>GET /v1/contacts</pre>
+
+			<h2>List contacts</h2>
+			<p>List all contacts with specified data:</p>
+			<pre>GET /v1/contacts/:data</pre>
+			<h3>Response</h3>
+			<pre>Status: 200 OK: https://api.info-evry.fr/v1/contacts/martin
                 
 [{
-    "fullName": "Michel MARTIN",
-    "firstName": "Michel",
-    "lastName": "MARTIN",
-    "emails": [{
-        "fullEmail": "Michel.MARTIN@domain.fr",
-        "emailUser": "Michel.MARTIN",
-        "emailDomain": "domain.fr"
-        }],
-    "courses": [],
-    "responsibilities": [],
-    "urls": []
+	"fullName": "Michel MARTIN",
+	"firstName": "Michel",
+	"lastName": "MARTIN",
+	"emails": [{
+		"fullEmail": "Michel.MARTIN@domain.fr",
+		"emailUser": "Michel.MARTIN",
+		"emailDomain": "domain.fr"
+		}],
+	"courses": [],
+	"responsibilities": [],
+	"urls": []
 }]</pre>
-        </div>
+		</div>
 
-    </main>
-    <footer>
-        <p>Info Evry — info-evry.fr</p>
-        <a href="#top" style="color: white;">Back to top</a>
-    </footer>
+	</main>
+	<footer>
+		<p>Info Evry — info-evry.fr</p>
+		<a href="#top">Back to top</a>
+	</footer>
 </body>
 
 </html>

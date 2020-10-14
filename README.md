@@ -4,6 +4,8 @@ Private HTTP API for Info Evry Student Group at University of Evry
 
 ## Documentation (api v1)
 
+https://api.info-evry.fr/docs
+
 ### Query timetable 
 
 #### URL Format :
